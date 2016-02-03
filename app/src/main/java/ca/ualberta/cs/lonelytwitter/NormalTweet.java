@@ -4,6 +4,8 @@ import java.util.Date;
 
 /**
  * Created by romansky on 1/12/16.
+ * Class for regular tweets, when isImportant returns False.
+ * Has lower priority than ImportantTweet.
  */
 public class NormalTweet extends Tweet implements Tweetable {
     public NormalTweet(Date date, String message) {
@@ -22,6 +24,7 @@ public class NormalTweet extends Tweet implements Tweetable {
         return this.message;
     }
 
+    /** @return FALSE */
     @Override
     public Boolean isImportant() {
         return Boolean.FALSE;
