@@ -60,7 +60,7 @@ public class LonelyTwitterActivity extends Activity {
 
                 // TODO: Replace with Elasticsearch
                 AsyncTask<NormalTweet, Void, Void> execute = new ElasticsearchTweetController.AddTweetTask();
-                execute.execute();
+                execute.execute(latestTweet);
                 //saveInFile();
 
                 setResult(RESULT_OK);
@@ -76,7 +76,7 @@ public class LonelyTwitterActivity extends Activity {
         // TODO: Replace with Elasticsearch
         ElasticsearchTweetController.GetTweetsTask getTweetsTask = new ElasticsearchTweetController.GetTweetsTask();
         try {
-            getTweetsTask.execute("");
+            getTweetsTask.execute("????????");
             tweets = getTweetsTask.get();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -89,6 +89,20 @@ public class LonelyTwitterActivity extends Activity {
         adapter = new ArrayAdapter<Tweet>(this, R.layout.list_item, tweets);
         oldTweetsList.setAdapter(adapter);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private void loadFromFile() {
         try {
