@@ -27,8 +27,7 @@ public class TweetAdapter extends ArrayAdapter<Tweet> {
         String message = tweet.getMessage();
         String dateString = tweet.getDate().toString();
 
-        //TODO: initialize this:
-        Bitmap thumbnail = null;
+        Bitmap thumbnail = tweet.getThumbnail();
 
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
